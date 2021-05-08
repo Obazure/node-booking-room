@@ -15,10 +15,11 @@ const validateBookings = (req: BookingsSaveRequest, res: Response, next: NextFun
                     return false
                 }
 
-                if ((field.endsWith('_from') || field.endsWith('_to')) && !isValidDate(value)) {
+                if (['booked_from', 'booked_to'].includes(field) && !isValidDate(value)) {
                     return false
                 }
 
+                // company is optional, so we validate only if value is given
                 if (field === 'company' && !!value && !isValidString(value)) {
                     return false
                 }
