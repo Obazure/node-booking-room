@@ -6,5 +6,5 @@ export interface BookingsSaveRequest extends BaseRequest {
 }
 
 export interface BookingsFetchRequest extends BaseRequest{
-    params: FilterPeriod
+    query: FilterPeriod
 }

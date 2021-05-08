@@ -3,7 +3,7 @@ import { BookingsFetchRequest } from '@/types/requests'
 import { convertToDate } from '@/utils/converting'
 
 const convertPeriodInParams = (req: BookingsFetchRequest, res: Response, next: NextFunction) => {
-    const period = req.params
+    const period = req.query
 
     Object.entries(period).forEach(([field, value]) => {
         if (value && (field.endsWith('_from') || field.endsWith('_to'))) {

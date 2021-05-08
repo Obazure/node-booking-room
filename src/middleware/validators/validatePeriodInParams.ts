@@ -3,7 +3,7 @@ import { isValidDate } from '@/utils/validation'
 import { BookingsFetchRequest } from '@/types/requests'
 
 const validatePeriodInParams = (req: BookingsFetchRequest, res: Response, next: NextFunction) => {
-    const { booked_from, booked_to } = req.params
+    const { booked_from, booked_to } = req.query
     if (isValidDate(booked_from) && isValidDate(booked_to)) {
         next()
         return
