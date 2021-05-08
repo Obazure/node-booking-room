@@ -15,13 +15,13 @@
     "homepage": "https://github.com/Obazure/node-booking-room#readme",
     "scripts": {
         "install:globals": "npm i -g node ts-node typescript",
-        "dev": "PORT=4000 nodemon --watch ./src src/index.ts",
+        "dev": "NODE_PORT=4000 nodemon --watch ./src src/index.ts",
         "serve": "node build/index.js",
         "build": "tsc",
         "test": "jest --clearCache",
         "test:coverage": "jest --clearCache --coverage",
-        "lint": "eslint 'src/**/*.{ts}' --max-warning=0",
-        "lint:fix": "eslint 'src/**/*.{ts}' --max-warning=0 --fix",
+        "lint": "eslint src/**/*.ts --max-warnings=0",
+        "lint:fix": "eslint src/**/*.ts --max-warnings=0 --fix",
         "migration:create": "knex --knexfile src/config/knexfile.ts migrate:make -x ts",
         "migration:migrate": "knex --knexfile src/config/knexfile.ts migrate:latest",
         "migration:rollback": "knex --knexfile src/config/knexfile.ts migrate:rollback"

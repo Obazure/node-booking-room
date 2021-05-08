@@ -1,11 +1,11 @@
 import express from 'express'
-import { BookingsFetchRequest, BookingsSaveRequest } from '@/types/requests'
-import BookingRepository from '@/repositories/BookingRepository'
-import validateBookings from '@/middleware/validators/validateBookings'
-import convertBookingsTime from '@/middleware/convertors/convertBookingsTime'
-import validatePeriodInParams from '@/middleware/validators/validatePeriodInParams'
-import convertPeriodInParams from '@/middleware/convertors/convertPeriodInParams'
-import { isValidId } from '@/utils/validation'
+import { BookingsFetchRequest, BookingsSaveRequest } from '../@types/requests'
+import BookingRepository from '../repositories/BookingRepository'
+import validateBookings from '../middleware/validators/validateBookings'
+import convertBookingsTime from '../middleware/convertors/convertBookingsTime'
+import validatePeriodInParams from '../middleware/validators/validatePeriodInParams'
+import convertPeriodInParams from '../middleware/convertors/convertPeriodInParams'
+import { isValidId } from '../utils/validation'
 
 const apiBookingRouter = express.Router()
 
@@ -29,7 +29,7 @@ apiBookingRouter.get(
     validatePeriodInParams,
     convertPeriodInParams,
     async (req: BookingsFetchRequest, res) => {
-        const { booked_from, booked_to } = req.params
+        const { booked_from, booked_to } = req.query
         const bookings = await BookingRepository.get({ booked_from, booked_to })
         res.status(200).json(bookings)
     }

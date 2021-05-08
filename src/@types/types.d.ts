@@ -1,6 +1,6 @@
 export interface FilterPeriod {
     booked_from: string | Date
-    booked_to: string| Date
+    booked_to: string | Date
 }
 
 export type Booking = {
@@ -11,4 +11,3 @@ export type Booking = {
     booked_from: string | Date
     booked_to: string | Date
 }
-

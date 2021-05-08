@@ -1,12 +1,12 @@
-import { Response, NextFunction } from 'express'
-import { BookingsSaveRequest } from '@/types/requests'
-import { isValidDate, isValidId, isValidString } from '@/utils/validation'
+import { NextFunction, Response } from 'express'
+import { BookingsSaveRequest } from '../../@types/requests'
+import { isValidDate, isValidId, isValidString } from '../../utils/validation'
 
-const validateBookings = (req: BookingsSaveRequest, res: Response, next: NextFunction) => {
+const validateBookings = (req: BookingsSaveRequest, res: Response, next: NextFunction): void => {
     const bookings = req.body
     if (Array.isArray(bookings)) {
-        const bookingsAreValid = bookings.every((booking, index) => {
-            const bookingIsValid = Object.entries(booking).every(([field, value]) => {
+        const bookingsAreValid = bookings.every(booking => {
+            return Object.entries(booking).every(([field, value]) => {
                 if (field === 'id' && !isValidId(value)) {
                     return false
                 }
@@ -26,7 +26,6 @@ const validateBookings = (req: BookingsSaveRequest, res: Response, next: NextFun
 
                 return true
             })
-            return bookingIsValid
         })
         if (bookingsAreValid) {
             next()

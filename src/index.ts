@@ -6,7 +6,7 @@ app.use(express.json())
 
 app.use('/booking', apiBookingRouter)
 
-const PORT = process.env.NODE_ENV || 3500
+const PORT = process.env.NODE_ENV || 4000
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}.`)
 })
