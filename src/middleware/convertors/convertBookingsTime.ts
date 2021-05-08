@@ -4,8 +4,8 @@ import { convertToDate } from '../../utils/converting'
 
 const convertBookingsTime = (req: BookingsSaveRequest, res: Response, next: NextFunction): void => {
     const bookings = req.body
-    bookings.forEach((booking, index) => {
-        Object.entries(booking).forEach(([field, value]) => {
+    bookings.map((booking, index) => {
+        Object.entries(booking).map(([field, value]) => {
             if (value && (field.endsWith('_from') || field.endsWith('_to'))) {
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore

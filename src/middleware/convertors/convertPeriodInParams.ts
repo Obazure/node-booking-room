@@ -9,7 +9,7 @@ const convertPeriodInParams = (
 ): void => {
     const period = req.query
 
-    Object.entries(period).forEach(([field, value]) => {
+    Object.entries(period).map(([field, value]) => {
         if (value && (field.endsWith('_from') || field.endsWith('_to'))) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
