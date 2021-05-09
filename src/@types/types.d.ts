@@ -4,7 +4,7 @@ export interface FilterPeriod {
 }
 
 export type Booking = {
-    id: number
+    id?: number
     first_name: string
     last_name: string
     company?: string

@@ -1,24 +1,30 @@
-import { Booking, FilterPeriod } from '../@types/types'
-import BookingModel from '../models/BookingModel'
+import { Booking as BookingType, FilterPeriod } from '../@types/types'
+import Booking from '../models/Booking'
 import { log } from '../utils/logger'
 
 const BookingService = {
-    async save(bookings: Booking[] | Booking): Promise<boolean> {
+    async save(bookings: BookingType[]): Promise<boolean> {
         try {
-
-            // TODO logic
+            const periods = bookings.map(({ booked_from, booked_to }) => ({
+                booked_from,
+                booked_to,
+            }))
+            const bookingsExist = Booking.existInPeriods(periods)
+            if (!bookingsExist) {
+                const status = await Booking.saveAll(bookings)
+                if (status) {
+                    return true
+                }
+            }
+            return false
         } catch (e) {
             log.error(e)
             return false
         }
-        return false
     },
-    async get({ booked_from, booked_to }: FilterPeriod): Promise<Booking[]> {
+    async get(period: FilterPeriod): Promise<BookingType[]> {
         try {
-            const bookings = await BookingModel.select()
-                .where('booked_from', '>=', booked_from)
-                .andWhere('booked_to', '<=', booked_to)
-            return bookings
+            return await Booking.filterByPeriod(period)
         } catch (e) {
             log.error(e)
             return []
@@ -26,7 +32,7 @@ const BookingService = {
     },
     async remove(bookingId: number): Promise<boolean> {
         try {
-            const result = await BookingModel.where('id', bookingId).del()
+            const result = await Booking.delete(bookingId)
             return result > 0
         } catch (e) {
             log.error(e)
