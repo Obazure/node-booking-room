@@ -6,6 +6,7 @@ node_modules
 .idea
 .docker
 node_modules
+docs
 
 # dependencies
 /.pnp
@@ -15,6 +16,7 @@ node_modules
 /coverage
 
 # production
+/docs
 /build
 /dist
 

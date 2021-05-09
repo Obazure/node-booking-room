@@ -21,7 +21,10 @@
         "test": "jest --clearCache",
         "test:coverage": "jest --clearCache --coverage",
         "lint": "eslint src/**/*.ts --max-warnings=0",
-        "lint:fix": "eslint src/**/*.ts --max-warnings=0 --fix"
+        "lint:fix": "eslint src/**/*.ts --max-warnings=0 --fix",
+        "docs:generate": "typedoc -out docs src",
+        "docs:serve": "node server-docs.js",
+        "docs": "npm run docs:generate && npm run docs:serve"
     },
     "dependencies": {
         "express": "^4.17.1",
@@ -41,6 +44,7 @@
         "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-prettier": "^3.4.0",
         "nodemon": "^2.0.7",
-        "prettier": "^2.2.1"
+        "prettier": "^2.2.1",
+        "typedoc": "^0.20.36"
     }
 }
