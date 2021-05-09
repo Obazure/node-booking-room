@@ -21,16 +21,13 @@
         "test": "jest --clearCache",
         "test:coverage": "jest --clearCache --coverage",
         "lint": "eslint src/**/*.ts --max-warnings=0",
-        "lint:fix": "eslint src/**/*.ts --max-warnings=0 --fix",
-        "migration:create": "knex --knexfile src/config/knexfile.ts migrate:make -x ts",
-        "migration:migrate": "knex --knexfile src/config/knexfile.ts migrate:latest",
-        "migration:rollback": "knex --knexfile src/config/knexfile.ts migrate:rollback"
+        "lint:fix": "eslint src/**/*.ts --max-warnings=0 --fix"
     },
     "dependencies": {
         "express": "^4.17.1",
-        "knex": "^0.95.4",
         "mysql2": "^2.2.5",
         "node": "^16.1.0",
+        "sequelize": "^6.6.2",
         "ts-node": "^9.1.1",
         "typescript": "^4.2.4"
     },
