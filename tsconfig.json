@@ -34,7 +34,8 @@
     ],
     "exclude": [
         "src/testUtils",
-        "src/**/*.test.*"
+        "src/**/*.test.*",
+        "src/**/*.spec.*"
     ]
 }
 
