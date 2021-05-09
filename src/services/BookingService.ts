@@ -1,3 +1,7 @@
+/**
+ * Contains the business logic of the interaction with Booking records.
+ * @module
+ */
 import { Booking as BookingType, FilterPeriod } from '../@types/types'
 import Booking from '../models/Booking'
 import { log } from '../utils/logger'

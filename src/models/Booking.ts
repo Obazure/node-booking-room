@@ -1,5 +1,9 @@
+/**
+ * Describe how to interact with data persistance storage to rich the business logic purposes.
+ * @module
+ */
 import { Optional, Model, DataTypes, Op } from 'sequelize'
-import { sequelize } from '../config/database'
+import sequelize from '../config/database'
 import { Booking as BookingType, FilterPeriod } from '../@types/types'
 
 export type BookingCreation = Optional<BookingType, 'id'>

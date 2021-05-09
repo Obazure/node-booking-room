@@ -1,3 +1,7 @@
+/**
+ * Converts all date-time fields in Bookings from string to Date objects to interact via Data Api.
+ * @module
+ */
 import { Response, NextFunction } from 'express'
 import { BookingsFetchRequest } from '../../@types/requests'
 import { convertToDate } from '../../utils/converting'

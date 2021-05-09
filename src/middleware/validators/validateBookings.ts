@@ -1,3 +1,7 @@
+/**
+ * Validate the Request Body to have a valid Bookings data.
+ * @module
+ */
 import { NextFunction, Response } from 'express'
 import { BookingsSaveRequest } from '../../@types/requests'
 import { isValidDate, isValidString } from '../../utils/validation'

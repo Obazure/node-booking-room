@@ -1,3 +1,7 @@
+/**
+ * Converts period filtration fields in Request Params from string to Date objects to interact via Data Api.
+ * @module
+ */
 import { Response, NextFunction } from 'express'
 import { BookingsSaveRequest } from '../../@types/requests'
 import { convertToDate } from '../../utils/converting'

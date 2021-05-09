@@ -1,3 +1,7 @@
+/**
+ * Describe the logic how to handle http requests.
+ * @module
+ */
 import express from 'express'
 import { BookingsFetchRequest, BookingsSaveRequest } from '../@types/requests'
 import BookingService from '../services/BookingService'

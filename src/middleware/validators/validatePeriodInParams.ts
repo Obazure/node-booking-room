@@ -1,3 +1,7 @@
+/**
+ * Validate the Request Params to have fields needed for Booking filtration.
+ * @module
+ */
 import { Response, NextFunction } from 'express'
 import { isValidDate } from '../../utils/validation'
 import { BookingsFetchRequest } from '../../@types/requests'

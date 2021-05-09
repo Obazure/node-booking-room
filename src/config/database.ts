@@ -18,4 +18,13 @@ if (!isDevelopment) {
     dbOptions.logging = false
 }
 
-export const sequelize = new Sequelize(MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD, dbOptions)
+/**
+ * @description Instantiate sequelize with configured and established mysql database connection
+ * @param database – The name of the database
+ * @param username – The username which is used to authenticate against the
+ * @param password – The password which is used to authenticate against the
+ * @param options – An object with options.
+ */
+const sequelize = new Sequelize(MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD, dbOptions)
+
+export default sequelize
