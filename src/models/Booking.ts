@@ -101,6 +101,7 @@ Booking.init(
     },
     {
         sequelize,
+        timestamps: false,
     }
 )
 
