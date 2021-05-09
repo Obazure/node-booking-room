@@ -1,7 +1,5 @@
 import { Options, Sequelize } from 'sequelize'
 
-const isDevelopment = process.env.NODE_ENV === 'development'
-
 const MYSQL_DATABASE = process.env.MYSQL_DATABASE || 'test'
 const MYSQL_USER = process.env.MYSQL_USER || 'root'
 const MYSQL_PASSWORD = process.env.MYSQL_PASSWORD || ''
@@ -12,10 +10,6 @@ const dbOptions: Options = {
     host: DB_HOST as string,
     port: DB_PORT as number,
     dialect: 'mysql',
-}
-
-if (!isDevelopment) {
-    dbOptions.logging = false
 }
 
 /**
