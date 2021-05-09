@@ -9,7 +9,7 @@ const BookingService = {
                 booked_from,
                 booked_to,
             }))
-            const bookingsExist = Booking.existInPeriods(periods)
+            const bookingsExist = await Booking.existInPeriods(periods)
             if (!bookingsExist) {
                 const status = await Booking.saveAll(bookings)
                 if (status) {
