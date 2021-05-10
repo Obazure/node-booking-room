@@ -4,6 +4,18 @@ This is a booking server for a meeting room, which can accept, return and manage
 
 ### Endpoints
 
+Was implemented 3 endpoinds:
+
+Get - `/bookings?booked_from=<date-time>&booked_to=<date-time>` query variables MUST be provided for the filtration.
+
+Post - `/bookings` body should be `Booking[]`
+
+Delete - `/bookings/<:id>` where `id` is `Booking.id`
+
+Note: The `date-time` format considered follow the RFC3339 - for example `2019-10-12T07:20:50.52Z`
+
+Note: there is postman-collection attached for the reviewing how the endpoints are working. Find it in `.deploy` folder. Please use it after docker-compose run.
+
 ### Deployment
 
 **To launch the api service**, please run:
