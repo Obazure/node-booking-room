@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "497460f2-68cb-4d4e-982c-5a22c5b76cdc",
+		"name": "Booking The Room",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch Booking filtered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/booking/?booked_from=2021-05-06T17:32:28Z&booked_to=2021-05-08T17:32:28Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"booking",
+						""
+					],
+					"query": [
+						{
+							"key": "booked_from",
+							"value": "2021-05-06T17:32:28Z"
+						},
+						{
+							"key": "booked_to",
+							"value": "2021-05-08T17:32:28Z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Bookings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"booked_from\": \"2021-05-07T17:32:28Z\",\n        \"booked_to\": \"2021-05-09T17:32:28Z\"\n    },\n    {\n        \"first_name\": \"James\",\n        \"last_name\": \"Olsen\",\n        \"company\": \"jwmd\",\n        \"booked_from\": \"2021-05-04T17:32:00Z\",\n        \"booked_to\": \"2021-05-05T17:32:00Z\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/booking/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Booking by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/booking/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"booking",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
