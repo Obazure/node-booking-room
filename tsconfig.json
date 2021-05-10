@@ -33,6 +33,7 @@
         "src/**/*"
     ],
     "exclude": [
+        "src/@testUtils",
         "src/testUtils",
         "src/**/*.test.*",
         "src/**/*.spec.*"

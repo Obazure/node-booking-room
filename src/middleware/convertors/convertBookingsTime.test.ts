@@ -23,5 +23,6 @@ describe('middleware/convertors/convertBookingsTime', () => {
         expect((fakeRequest.body[0].booked_from as Date).getTime()).toEqual(1620408720000)
         expect((fakeRequest.body[0].booked_to as any) instanceof Date).toEqual(true)
         expect((fakeRequest.body[0].booked_to as Date).getTime()).toEqual(1620581520000)
+        expect(next).toHaveBeenCalledTimes(1)
     })
 })
