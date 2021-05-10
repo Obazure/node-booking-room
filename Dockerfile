@@ -19,6 +19,6 @@ RUN npm run build
 FROM build_image as app
 WORKDIR /app
 
-EXPOSE 80
+EXPOSE 3000
 ENV NODE_ENV=production
 ENTRYPOINT ["npm", "run", "serve"]
